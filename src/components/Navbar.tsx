@@ -7,6 +7,11 @@ const Navbar = () => {
       <div className="logo">
         <img src={logo} alt="Talkpod Logo" />
       </div>
+
+      <div>
+        <a href="#features" >Features</a>
+        <a href="#about" className='ml-2'>About</a>
+      </div>
       <div className="menu">
         <button
 

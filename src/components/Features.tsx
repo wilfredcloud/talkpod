@@ -5,7 +5,7 @@ import FeatureItem from './FeatureItem'
 const Features = () => {
 
     return (
-        <div className="features">
+        <div id='features' className="features">
             <h2>Features</h2>
             <div className="row">
                 {features.map((item) => <FeatureItem key={item.name} {...item} />)}

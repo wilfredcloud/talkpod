@@ -1,7 +1,7 @@
 
 const About = () => {
   return (
-    <div className="features">
+    <div id='about' className="features">
     <h2>About</h2>
         <div> 
         One of my big dream is to build a voice and video conferencing application. This lead to the development of 

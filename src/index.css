@@ -4,8 +4,6 @@ body {
   /* background: #eef1f3; */
   font-family: "Montserrat", sans-serif;
   font-family: "Open Sans", sans-serif;
-  overflow-x: hidden;
-  overflow-y: hidden;
 }
 * {
   padding: 0;
@@ -66,7 +64,7 @@ body {
 }
 
 .progress {
-  background-color: cornflowerblue;
+  background-color: #8952FF;
   animation: progress;
   animation-duration: 2s;
   animation-iteration-count: infinite;
@@ -159,22 +157,23 @@ body {
   width: auto;
 }
 
-.menu .sign-btn {
-  margin-left: 10px;
-  color: white;
-  background-color: cornflowerblue;
+.btn-group  {
+  display: flex;
+  flex-direction: row;
+  
 }
 .sign-btn {
   height: 40px;
   padding: 0 20px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  font-weight: bold;
+  font-weight: 500;
   border: none;
+  border-radius: 8px;
 }
 
 .sign-btn.get-started {
-  border: 2px solid cornflowerblue;
-  background-color: cornflowerblue;
+  border: 2px solid #8952FF;
+  background-color: #8952FF;
   color: white;
 
   height: 50px;
@@ -183,7 +182,40 @@ body {
 .sign-btn.get-started:hover {
   /* border-radius: 5px; */
   background-color: white;
-  color: cornflowerblue;
+  color: #8952FF;
+}
+
+.btn-full {
+  color: white;
+  background-color: #8952FF;
+  border: 2px solid #8952FF;
+  height: 40px;
+  padding: 0 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.btn-full:hover{
+  background-color: white;
+  color: #8952FF;
+}
+
+.btn-border {
+  background-color: white;
+  color: #8952FF;
+  border: 2px solid #8952FF;
+  border-radius: 8px;
+  height: 40px;
+  padding: 0 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  font-weight: 500;
+}
+
+.btn-border:hover{
+  background-color: #8952FF;
+  color: white;
 }
 
 .showcase {
@@ -219,7 +251,7 @@ body {
 }
 
 .showcase-content .left h1 em {
-  color: #6c63ff;
+  color: #8952FF;
   font-size: 2.8rem;
 }
 
@@ -263,7 +295,7 @@ body {
 }
 
 .feature-wrapper i {
-  color: #6c63ff;
+  color: #8952FF;
   font-size: 2rem;
 }
 

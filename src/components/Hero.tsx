@@ -5,16 +5,23 @@ const Hero = () => {
     <div className="showcase">
     <div className="showcase-content row">
       <div className="left col-12 col-md-6">
-        <h1>Welcome to the <em>Colloquium!</em></h1>
+        <h1>Welcome to <em>Talkpod!</em></h1>
         <p>
-          The Complete Online Conferencing Solution and Conference Hosting
-          Platform.
+          The Conferencing Solution to amplify your voice
+
         </p>
+        <div className="btn-group">
         <button
-          className="sign-btn get-started"
+          className="btn-full"
         >
           Get Started!
         </button>
+        <button
+          className="btn-border ml-2"
+        >
+          Github
+        </button>
+        </div>
       </div>
       <div className="right col-12 col-md-6">
         <img src={callSVG} alt="call svg" />

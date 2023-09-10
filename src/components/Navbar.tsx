@@ -10,12 +10,12 @@ const Navbar = () => {
       <div className="menu">
         <button
 
-          className="sign-btn"
+          className="btn-border"
         >
           Sign In
         </button>
         <button
-          className="sign-btn"
+          className="btn-full ml-2"
         >
           Sign Up
         </button>

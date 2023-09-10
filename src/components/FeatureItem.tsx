@@ -1,16 +1,14 @@
-import React from 'react'
+import { FeaturesType } from "../utils/types"
 
-const FeatureItem = () => {
+const FeatureItem:React.FC<FeaturesType> = ({name, description, iconClass}) => {
   return (
     <div className="feature-wrapper col-12 col-md-6 col-lg-3">
-    <i className="fa fa-bar-chart-o"></i>
+    <i className={iconClass}></i>
 
     <div className="features-content">
-      <h3>Presentation</h3>
+      <h3>{name}</h3>
       <p>
-        Upload any PDF presentation or MS Office document. The
-        Colloquium keeps everyone in sync with your current slide, zoom,
-        pan, annotations, and mouse pointer.
+       {description}
       </p>
     </div>
   </div>

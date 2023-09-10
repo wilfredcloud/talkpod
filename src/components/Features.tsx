@@ -1,14 +1,17 @@
+import { features } from '../utils/data'
 import FeatureItem from './FeatureItem'
 
+
 const Features = () => {
-  return (
-    <div className="features">
-    <h2>Some Unique Features</h2>
-    <div className="row">
-    {[1, 2, 3].map((item) => <FeatureItem key={item}/>)}
-    </div>
-    </div>    
-  )
+
+    return (
+        <div className="features">
+            <h2>Features</h2>
+            <div className="row">
+                {features.map((item) => <FeatureItem key={item.name} {...item} />)}
+            </div>
+        </div>
+    )
 }
 
 export default Features

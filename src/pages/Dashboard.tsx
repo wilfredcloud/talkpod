@@ -1,8 +1,10 @@
 import { Menu } from "antd"
 import Sider from "antd/es/layout/Sider"
 import Layout, { Content, Header } from "antd/es/layout/layout"
+import useAuth from "../hooks/useAuth"
 
 const Dashboard = () => {
+    useAuth();
   return (
    <Layout>
     <Header>

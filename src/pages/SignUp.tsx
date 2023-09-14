@@ -1,7 +1,7 @@
 import { Button, Card, Form, Input, notification } from 'antd'
 import Title from 'antd/es/typography/Title'
 import Axios from '../utils/Axios';
-import useAuth from '../hooks/useAuth';
+// import useAuth from '../hooks/useAuth';
 
 interface signUpData {
     name: string;
@@ -16,18 +16,19 @@ interface AuthResult {
 
 
 const SignUp = () => {
-useAuth()
+// useAuth("/signup", "/")
  const handleSignUp = async (values: signUpData) => {
    try {
         const response = await Axios.post('/auth/signup', values);
-        console.log(response);
-        const data: AuthResult = response.data;
+         const data: AuthResult = response.data;
 
         if (data.result && data.token) {
             localStorage.setItem("token", data.token);
             notification.success({
                 message: "Acount created succesfully"
             })
+            window.location.reload();
+
         }else {
             notification.error({
                 message: "Account already exist"

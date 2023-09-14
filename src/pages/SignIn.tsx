@@ -1,7 +1,7 @@
 import { Button, Card, Form, Input, notification } from 'antd'
 import Title from 'antd/es/typography/Title'
 import Axios from '../utils/Axios';
-import useAuth from '../hooks/useAuth';
+// import useAuth from '../hooks/useAuth';
 
 interface SignInData {
     email: string;
@@ -13,9 +13,8 @@ interface AuthResult {
     token: string | null
 }
 
-
 const SignIn = () => {
-useAuth()
+// useAuth()
  const handleSignin = async (values: SignInData) => {
    try {
         const response = await Axios.post('/auth/signin', values);

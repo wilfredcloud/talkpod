@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import logo from '../assets/talkpod-logo.png'
 
 const Navbar = () => {
@@ -13,17 +14,17 @@ const Navbar = () => {
         <a href="#about" className='ml-2'>About</a>
       </div>
       <div className="menu">
-        <button
+        <Link to="/signin"
 
           className="btn-border"
         >
           Sign In
-        </button>
-        <button
+        </Link>
+        <Link to="/signup"
           className="btn-full ml-2"
         >
           Sign Up
-        </button>
+        </Link>
       </div>
     </div>
   </nav>

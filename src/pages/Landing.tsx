@@ -6,7 +6,7 @@ import Navbar from "../components/Navbar"
 
 const Landing = () => {
   return (
-    <div className="site-content">
+    <div>
     <Navbar/>
 
     <Hero/>

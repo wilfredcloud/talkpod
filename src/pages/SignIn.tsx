@@ -1,31 +1,34 @@
 import { Button, Card, Form, Input, notification } from 'antd'
 import Title from 'antd/es/typography/Title'
 import Axios from '../utils/Axios';
-// import useAuth from '../hooks/useAuth';
+import { UserType } from '../utils/types';
+import { useContext } from 'react';
+import { UserContext } from '../contexts/UserContext';
+import { useNavigate } from 'react-router-dom';
+import { getUserHomeRoom } from '../utils/helpers';
 
 interface SignInData {
     email: string;
     password: string
 }
 
-interface AuthResult {
-    result: boolean,
-    token: string | null
-}
 
 const SignIn = () => {
-// useAuth()
+    const { setUser} = useContext(UserContext);
+    const navigate = useNavigate()
+
  const handleSignin = async (values: SignInData) => {
    try {
         const response = await Axios.post('/auth/signin', values);
-        const data: AuthResult = response.data;
+        const user: UserType | null = response.data;
 
-        if (data.result && data.token) {
-            localStorage.setItem("token", data.token);
+        if (user && user.token) {
+            setUser(user);
             notification.success({
                 message: "Succesfully logged in"
             })
-            window.location.reload();
+            const room = await getUserHomeRoom(user.data.id)
+            navigate(`/${room.id}`);
         }else {
             notification.error({
                 message: "Wrong username or password"
@@ -38,6 +41,8 @@ const SignIn = () => {
         })
    }
  }
+
+
 
   return (
     <div className=' w-full h-screen flex justify-center items-center'>

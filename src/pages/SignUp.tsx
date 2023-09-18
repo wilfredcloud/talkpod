@@ -1,7 +1,11 @@
 import { Button, Card, Form, Input, notification } from 'antd'
 import Title from 'antd/es/typography/Title'
 import Axios from '../utils/Axios';
-// import useAuth from '../hooks/useAuth';
+import { UserType } from '../utils/types';
+import { useContext } from 'react';
+import { UserContext } from '../contexts/UserContext';
+import { getUserHomeRoom } from '../utils/helpers';
+import { useNavigate } from 'react-router-dom';
 
 interface signUpData {
     name: string;
@@ -9,26 +13,22 @@ interface signUpData {
     password: string
 }
 
-interface AuthResult {
-    result: boolean,
-    token: string | null
-}
-
-
 const SignUp = () => {
-// useAuth("/signup", "/")
+    const {setUser} = useContext(UserContext);
+    const navigate = useNavigate()
+
  const handleSignUp = async (values: signUpData) => {
    try {
         const response = await Axios.post('/auth/signup', values);
-         const data: AuthResult = response.data;
+        const user: UserType | null = response.data;
 
-        if (data.result && data.token) {
-            localStorage.setItem("token", data.token);
+        if (user && user.token) {
+            setUser(user);
             notification.success({
-                message: "Acount created succesfully"
+                message: "Account created successfully"
             })
-            window.location.reload();
-
+            const room = await getUserHomeRoom(user.data.id)
+            navigate(`/${room.id}`);
         }else {
             notification.error({
                 message: "Account already exist"

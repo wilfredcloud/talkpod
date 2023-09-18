@@ -1,13 +1,6 @@
 import {createContext, ReactNode, useEffect, useState } from "react";
+import { UserType } from "../utils/types";
 
-interface UserType {
-    data: {
-        id: string;
-        name: string;
-        email: string;
-    };
-    token: string
-}
 
 interface UserContextValueType {
     user: UserType | null;

@@ -50,7 +50,7 @@ const Room = () => {
   }
 
   return (
-    <div className="site-content">
+    <div>
     <Navbar/>
 
     <div className="showcase">

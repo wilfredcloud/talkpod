@@ -7,7 +7,7 @@ const useAuth = (failRedirectTo?: string, successRedirectTo?: string) => {
     const redirect = () => {
         const token = localStorage.getItem("token");
         if (token) {
-             navigate(successRedirectTo || "/");
+             navigate(successRedirectTo || "/dashboard");
         }else {
             navigate(failRedirectTo || "/signin");
         }

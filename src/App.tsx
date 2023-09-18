@@ -1,18 +1,16 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import SignUp from "./pages/SignUp";
-import SignIn from "./pages/SignIn";
-import Landing from "./pages/Landing";
-import Conference from "./pages/Conference";
+import { useContext } from "react";
+import { UserContext } from "./contexts/UserContext";
+import routes from "./utils/AppRoutes";
 
 function App() {
+const {user} = useContext(UserContext)
+const isAuthenticated = !!user
 
   return (
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Landing/>}/>
-      <Route path="/signup" element={<SignUp/>} />
-      <Route path="/signin" element={<SignIn/>} />
-      <Route path="/join" element={<Conference/>} />
+      {routes(isAuthenticated).map((route) => <Route key={route.path} path={route.path} element={route.element}/>)}
     </Routes>
     </BrowserRouter>
   )

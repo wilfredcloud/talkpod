@@ -22,7 +22,7 @@ const ActionButton: React.FC<ActionButtonProps> = ({ text, type = "button", vari
     ${variant === 'full' ? bgHoverColor : ''} 
     ${borderColor} ${borderHoverColor} border-2
      font-medium rounded-lg text-sm px-4 py-2 
-     text-center mr-3 md:mr-0 outline-none cursor-pointer`}>
+     text-center md:mr-0 outline-none cursor-pointer`}>
             {text}
         </button>
 
